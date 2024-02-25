@@ -6,14 +6,14 @@ const sendMail = async ({
   email,
   name,
   link,
-  idurar_app_email,
+  app_email,
   subject = 'Verify your email | idurar',
   type = 'emailVerfication',
 }) => {
   const resend = new Resend(process.env.RESEND_API);
 
   const { data } = await resend.emails.send({
-    from: idurar_app_email,
+    from: app_email,
     to: email,
     subject,
     html:

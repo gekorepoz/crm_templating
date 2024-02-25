@@ -56,13 +56,13 @@ const login = async (req, res, { userModel }) => {
   if (!user.enabled) {
     const settings = await loadSettings();
 
-    const idurar_app_email = settings['idurar_app_email'];
-    const idurar_base_url = settings['idurar_base_url'];
-    const url = checkAndCorrectURL(idurar_base_url);
+    const app_email = settings['app_email'];
+    const base_url = settings['base_url'];
+    const url = checkAndCorrectURL(base_url);
 
     const link = url + '/verify/' + user._id + '/' + userPassword.emailToken;
 
-    await sendMail({ email, name: user.name, link, idurar_app_email });
+    await sendMail({ email, name: user.name, link, app_email });
 
     return res.status(403).json({
       success: false,

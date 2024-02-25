@@ -37,8 +37,8 @@
   },
   {
     "setupCategory": "setup_config",
-    "setupKey": "idurar_app_email",
-    "setupValue": "",
+    "setupKey": "app_email",
+    "setupValue": "francesco.iphone@gmail.com",
     "valueType": "string"
   },
   {

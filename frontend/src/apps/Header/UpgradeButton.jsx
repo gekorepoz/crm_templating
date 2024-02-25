@@ -15,7 +15,7 @@ export default function UpgradeButton() {
         <Button
           type="primary"
           onClick={() => {
-            window.open(`https://www.idurarapp.com/contact-us/`);
+            window.open(`https://google.com`);
           }}
         >
           {translate('Contact us')}

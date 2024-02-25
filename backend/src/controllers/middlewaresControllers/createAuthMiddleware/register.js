@@ -10,12 +10,14 @@ const sendMail = require('./sendMail');
 const register = async (req, res, { userModel }) => {
   const settings = await loadSettings();
 
-  const idurar_registration_allowed = settings['idurar_registration_allowed'];
+  const registration_allowed = settings['registration_allowed'];
 
-  const idurar_app_email = settings['idurar_app_email'];
-  const idurar_base_url = settings['idurar_base_url'];
+  const app_email = settings['app_email'];
+  const base_url = settings['base_url'];
 
-  if (!idurar_registration_allowed) {
+  console.log("registration_allowed: "+registration_allowed)
+
+  if (!registration_allowed) {
     return res.status(409).json({
       success: false,
       result: null,
@@ -79,11 +81,11 @@ const register = async (req, res, { userModel }) => {
     });
   }
 
-  const url = checkAndCorrectURL(idurar_base_url);
+  const url = checkAndCorrectURL(base_url);
 
   const link = url + '/verify/' + savedUser._id + '/' + emailToken;
 
-  await sendMail({ email, name, link, idurar_app_email });
+  await sendMail({ email, name, link, app_email });
   // Email verification logic here
 
   return res.status(200).json({

@@ -40,7 +40,7 @@ export default function GeneralSettingForm() {
       </Form.Item>
       <Form.Item
         label={translate('Allow Registration')}
-        name="idurar_registration_allowed"
+        name="registration_allowed"
         valuePropName="checked"
       >
         <Switch checkedChildren={<CheckOutlined />} unCheckedChildren={<CloseOutlined />} />
@@ -101,13 +101,13 @@ export default function GeneralSettingForm() {
         />
       </Form.Item>
 
-      <Form.Item label={translate('Application Email')} name="idurar_app_email">
+      <Form.Item label={translate('Application Email')} name="app_email">
         <Input autoComplete="off" />
       </Form.Item>
       <Form.Item label={translate('Server URl')} name="idurar_server_url">
         <Input autoComplete="off" />
       </Form.Item>
-      <Form.Item label={translate('Application URl')} name="idurar_base_url">
+      <Form.Item label={translate('Application URl')} name="base_url">
         <Input autoComplete="off" />
       </Form.Item>
     </>

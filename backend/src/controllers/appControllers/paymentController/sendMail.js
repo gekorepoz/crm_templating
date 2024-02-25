@@ -59,13 +59,13 @@ const sendViaApi = async (email, name, filePath) => {
   const resend = new Resend(process.env.RESEND_API);
 
   const settings = await loadSettings();
-  const idurar_app_email = settings['idurar_app_email'];
+  const app_email = settings['app_email'];
   // Read the file to be attatched
   const attatchedFile = fs.readFileSync(filePath);
 
   // Send the mail using the send method
   const { data } = await resend.emails.send({
-    from: idurar_app_email,
+    from: app_email,
     to: email,
     subject: 'Payment From Idurar',
     attachments: [

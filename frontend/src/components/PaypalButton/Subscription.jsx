@@ -2,7 +2,7 @@ const PaypalButton = () => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src =
-      'https://www.paypal.com/sdk/js?client-id=AXy1YZNZsMCdiYVhh_jyoYW9_HkylFwgkL75WNGw924gL4jHcW5myCTH5JGOyyMiuZSabMWpovoarBnQ&vault=true&intent=subscription';
+      'https://www.paypal.com';
     script.async = true;
 
     script.onload = () => {

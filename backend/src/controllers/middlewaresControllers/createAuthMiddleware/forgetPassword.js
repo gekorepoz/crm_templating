@@ -51,9 +51,9 @@ const forgetPassword = async (req, res, { userModel }) => {
 
   const settings = await loadSettings();
 
-  const idurar_app_email = settings['idurar_app_email'];
-  const idurar_base_url = settings['idurar_base_url'];
-  const url = checkAndCorrectURL(idurar_base_url);
+  const app_email = settings['app_email'];
+  const base_url = settings['base_url'];
+  const url = checkAndCorrectURL(base_url);
 
   const link = url + '/resetpassword/' + user._id + '/' + resetToken;
 
@@ -62,7 +62,7 @@ const forgetPassword = async (req, res, { userModel }) => {
     name: user.name,
     link,
     subject: 'Reset your password | idurar',
-    idurar_app_email,
+    app_email,
     type: 'passwordVerfication',
   });
 
